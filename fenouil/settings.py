@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'referentiel.apps.ReferentielConfig',
     'publicite.apps.PubliciteConfig',
+    'Commandes.apps.CommandesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
