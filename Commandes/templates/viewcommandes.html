@@ -1,0 +1,22 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'viewcommandes.css' %}">
+
+<html>
+
+<body>
+    <div class="article">
+        <form method="post">
+            {% csrf_token %}
+            <h1>Rentrer un article</h1>
+            <label for="name">Nom de l'article :</label>
+            <input type="text" id="name" name="name" required minlength="1" maxlength="50" size="10">
+            <br> <br>
+            <label for="price">Prix de l'article :</label>
+            <input type="text" id="price" name="price" required minlength="1" maxlength="8" size="10">
+            <br> <br>
+            <button type="submit"> Valider</button>
+        </form>
+    </div>
+</body>
+
+</html>
