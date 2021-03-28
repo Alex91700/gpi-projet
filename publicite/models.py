@@ -7,16 +7,11 @@ class Cible(models.Model):
     individus = models.ManyToManyField(Individu)
     valide = models.BooleanField(default=False)
 
-
-
-
-
-
 class Publicite(models.Model):
     cible = models.ForeignKey(Cible, on_delete=models.CASCADE)
     titre = models.CharField(max_length=200)
     description = models.CharField(max_length=500)
-    dateenvoi = models.DateTimeField()
+    dateenvoi = models.DateTimeField(null=True)
 
     papierStandard = "PST"
     papierEconomique = "PEC"
@@ -29,3 +24,5 @@ class Publicite(models.Model):
 
     format = models.CharField(
         max_length=3, choices=format_choix, default=papierStandard)
+
+    articles = models.ManyToManyField(Article)
