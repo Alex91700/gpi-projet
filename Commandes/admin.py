@@ -1,7 +1,7 @@
+  
+from Commandes.models import Commande, Reglement, Vente
 from django.contrib import admin
 
-from .models import Commandes, Cheques, CB
 # Register your models here.
-
-aCommandes = [Commandes, Cheques, CB]
-admin.site.register(aCommandes)
+aRegistrer = [Commande, Vente, Reglement]
+admin.site.register(aRegistrer)

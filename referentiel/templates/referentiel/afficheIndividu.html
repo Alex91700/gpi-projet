@@ -1,0 +1,54 @@
+{% extends 'referentiel/referentiel_view.html' %}
+
+{%block content %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'referentiel/afficheArticle.css' %}">
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div class="contenu">
+        <table class="tableReferentiel">
+            <th id=gauche width="13%">Id </th>
+            
+            <th class=milieu width="13%">Nom</th>
+            <th class=milieu width="13%">Prenom</th>
+
+            <th class=milieu width="13%">Categorie Commerciale</th>
+            <th class=milieu width="13%">Categorie Professionnelle</th>
+
+            <th class=milieu width="13%">Numero de telephone</th>
+            <th id=droite width="13%">Email</th>
+           
+
+            {% for i in individus %}
+
+            <tr class=corps>
+                <td>{{i.id}}</td>
+               
+                <td>{{i.nom}}</td>
+                <td>{{i.prenom}}</td>
+
+                <td>{{i.catcommerciale}}</td>
+                <td>{{i.catprofessionnelle}}</td>
+                
+                <td>{{i.ntel}}</td>
+                <td>{{i.mail}}</td>
+                
+                <td width="10%"><a href="{% url 'referentiel:modifIndividu' pk=i.id%}">Details</a></td>
+            </tr>
+
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>
+
+{%endblock content %}

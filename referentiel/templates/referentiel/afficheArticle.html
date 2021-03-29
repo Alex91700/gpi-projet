@@ -1,0 +1,28 @@
+{% extends 'referentiel/referentiel_view.html' %}
+
+{%block content %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'referentiel/afficheArticle.css' %}">
+
+<div class="contenu">
+    <table class="tableReferentiel">
+        <th width="10%" id=gauche>Id de l'article</th>
+        <th width="60%" class=milieu>Désignation</th>
+        <th width="20%" id=droite>Prix</th>
+
+        {% for i in articles %}
+
+        <tr class="corps">
+            <td>{{i.id}}</td>
+            <td>{{i.designation}}</td>
+            <td>{{i.prix}}</td>
+            <td width="10%"><a href="{% url 'referentiel:modifArticle' pk=i.id%}">Modifier</a></td>
+            <td width="10%"><a href="{% url 'referentiel:supressionArticle' pk=i.id%}">Supprimer</a></td>
+        </tr>
+
+        {% endfor %}
+    </table>
+</div>
+
+{%endblock content %}
