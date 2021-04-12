@@ -13,7 +13,7 @@ from django.urls import reverse
 
 @permission_required("utilisateurs.perm_commandes")
 def index(request):
-    return render(request, 'referentiel/referentiel_view.html')
+    return render(request, 'commandes/commandesHome.html')
 
 
 # TODO: verification carte
@@ -169,6 +169,7 @@ def validiteCommande(request, pk):
             validite = False
         # si cheque non signe
         if reglement.type == 'cheque':
+            print('cheque')
             if 'chequeSigne' not in request.POST:
                 anomalie2 = Anomalie(
                     commande=commande, type=Anomalie.type_erreur_moyen_paiement, date_generation=date.today())

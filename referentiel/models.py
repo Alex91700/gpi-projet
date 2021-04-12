@@ -25,7 +25,7 @@ class Adresse(models.Model):
     ville = models.CharField(max_length=50)
 
     def __str__(self) -> str:
-        return str(self.numero)+self.rue+"\n"+str(self.codepostal)+self.ville
+        return str(self.numero)+" "+self.rue+"\n "+str(self.codepostal)+" "+self.ville
 
 
 class Individu(models.Model):
@@ -49,4 +49,4 @@ class Individu(models.Model):
         max_length=20, choices=cat_choix, default=prospect)
 
     def __str__(self) -> str:
-        return "(id = "+str(self.id)+", nom= "+self.nom+", prenom= "+self.prenom
+        return "(id = "+str(self.id)+", nom= "+self.nom+", prenom= "+self.prenom + ")"
